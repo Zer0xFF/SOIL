@@ -37,7 +37,9 @@
 #endif
 
 #include "SOIL.h"
-#include "stb_image_aug.h"
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+#include "stb_image_extra.h"
 #include "image_helper.h"
 #include "image_DXT.h"
 
@@ -45,7 +47,7 @@
 #include <string.h>
 
 /*	error reporting	*/
-char *result_string_pointer = "SOIL initialized";
+const char *result_string_pointer = "SOIL initialized";
 
 /*	for loading cube maps	*/
 enum{
