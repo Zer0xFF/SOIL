@@ -24,10 +24,10 @@ ENDIF(NOT CMAKE_BUILD_TYPE)
 # Configure some Apple specific build options
 # -------------------------------------------
 IF(APPLE)
-    SET(CMAKE_OSX_ARCHITECTURES x86_64;i386)
+    SET(CMAKE_OSX_ARCHITECTURES x86_64)
     SET(CMAKE_OSX_DEPLOYMENT_TARGET 10.7)
     SET(CMAKE_XCODE_ATTRIBUTE_SUPPORTED_PLATFORMS macosx)
-    SET(CMAKE_XCODE_ATTRIBUTE_VALID_ARCHS "i386 x86_64")
+    SET(CMAKE_XCODE_ATTRIBUTE_VALID_ARCHS "x86_64")
 
     # Xcode Generator
     IF(XCODE_VERSION)
@@ -57,7 +57,6 @@ ENDIF(APPLE)
 # Source Files
 SET(SOIL_SRCS
 	src/image_helper.c
-    src/stb_image_aug.c
     src/image_DXT.c
     src/SOIL.h
 )
@@ -65,7 +64,8 @@ SET(SOIL_SRCS
 # Header Files
 SET(SOIL_HDRS
 	src/image_helper.h
-    src/stb_image_aug.h
+    src/stb_image.h
+    src/stb_image_extra.h
     src/image_DXT.h
     src/stbi_DDS_aug_c.h
     src/stbi_DDS_aug.h
